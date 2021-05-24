@@ -1,2 +1,2 @@
 # MedCabinet-App
-Domowa Apteczka - domowa apteczka
+Domowa Apteczka - projekt zaliczeniowy 
