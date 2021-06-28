@@ -15,18 +15,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.pl.agh.kowalp.medcabinetapp.*
 
-class MainActivity : AppCompatActivity(), SelectionRecyclerViewClickListener {
+class MainActivity : AppCompatActivity() {
 
 
-    lateinit var listRecyclerView: RecyclerView
     lateinit var CheckButton: Button
-
-    val dataManager: DataManager = DataManager(this)
-
-    companion object {
-        const val INTENT_LIST_KEY = "list"
-        const val LIST_DETAIL_REQUEST_CODE = 123
-    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,90 +33,6 @@ class MainActivity : AppCompatActivity(), SelectionRecyclerViewClickListener {
             val intent = Intent(this, MedicineList::class.java)
             startActivity(intent)
         }
-
-
-
-
-
-        val lists = dataManager.readList()
-
-
-        findViewById<FloatingActionButton>(R.id.add_list_button).setOnClickListener { view ->
-            showCreateListDialog()
-        }
-
-        listRecyclerView = findViewById(R.id.lists_recycler_view2)
-        listRecyclerView.layoutManager = LinearLayoutManager(this)
-
-        listRecyclerView.adapter = ListSelectionRecyclerViewAdapter(lists, this )
     }
-
-    private fun showListDetails(list: TaskList) {
-        val listDetailIntent = Intent(this, DetailsActivity::class.java)
-        listDetailIntent.putExtra(INTENT_LIST_KEY, list)
-        startActivityForResult(listDetailIntent, LIST_DETAIL_REQUEST_CODE)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if(requestCode == LIST_DETAIL_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            data?.let {
-                dataManager.saveList(data.getParcelableExtra(INTENT_LIST_KEY))
-                updateLists()
-            }
-        }
-    }
-
-    private fun updateLists() {
-        val lists = dataManager.readList()
-        listRecyclerView.adapter = ListSelectionRecyclerViewAdapter(lists, this)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-    private fun showCreateListDialog() {
-        val dialogTitle: String = getString(R.string.list_name)
-        val positiveButtonTitle = getString(R.string.create_list)
-
-        val alertDialogBuilder = AlertDialog.Builder(this)
-        val listTitleEditionText = EditText(this)
-        listTitleEditionText.inputType = InputType.TYPE_CLASS_TEXT
-
-        alertDialogBuilder.setTitle(dialogTitle)
-        alertDialogBuilder.setView(listTitleEditionText)
-
-        alertDialogBuilder.setPositiveButton(positiveButtonTitle) { dialog, _ ->
-            val list = TaskList(listTitleEditionText.text.toString())
-            dataManager.saveList(list)
-            val recyclerViewAdapter = listRecyclerView.adapter as ListSelectionRecyclerViewAdapter
-            recyclerViewAdapter.addList(list)
-            showListDetails(list)
-        }
-
-        alertDialogBuilder.create().show()
-
-
-    }
-
-    override fun listItemClicked(list: TaskList) {
-        showListDetails(list)
-    }
-
-
 
 }

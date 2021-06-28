@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".MedicineList">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="96dp"
+        android:fontFamily="@font/expletus_sans"
+        android:text="Add medicine"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_list_button2"
         android:layout_width="72dp"
@@ -34,8 +46,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Medicine_Recycler"
         android:layout_width="409dp"
-        android:layout_height="400dp"
-        android:layout_marginBottom="200dp"
+        android:layout_height="450dp"
+        android:layout_marginBottom="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

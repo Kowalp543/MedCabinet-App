@@ -20,7 +20,7 @@ class DetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_details)
 
-        list = intent.getParcelableExtra(MainActivity.INTENT_LIST_KEY)!!
+        list = intent.getParcelableExtra(MedicineList.INTENT_LIST_KEY)!!
         title = list.name
 
         taskListRecyclerView = findViewById(R.id.list_items_recycler_view)
@@ -56,7 +56,7 @@ class DetailsActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         val bundle = Bundle()
-        bundle.putParcelable(MainActivity.INTENT_LIST_KEY, list)
+        bundle.putParcelable(MedicineList.INTENT_LIST_KEY, list)
 
         val intent = Intent()
         intent.putExtras(bundle)

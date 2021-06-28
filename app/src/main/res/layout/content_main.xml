@@ -7,22 +7,11 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/lists_recycler_view2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
     <Button
         android:id="@+id/checkbutton"
         android:layout_width="310dp"
         android:layout_height="72dp"
-        android:layout_marginBottom="328dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="@color/button"
         android:fontFamily="@font/expletus_sans"
         android:shadowColor="#131111"
@@ -32,16 +21,17 @@
         app:icon="@drawable/image2"
         app:iconSize="60dp"
         app:iconTint="#000"
-        app:layout_constraintBottom_toBottomOf="@+id/lists_recycler_view2"
-        app:layout_constraintEnd_toEndOf="@+id/lists_recycler_view2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="299dp"
         android:layout_height="191dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/image1" />
 
@@ -49,14 +39,12 @@
         android:id="@+id/searchView"
         android:layout_width="310dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginTop="120dp"
         android:background="@color/button"
-        app:layout_constraintBottom_toTopOf="@+id/checkbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/lists_recycler_view2"
-        app:layout_constraintVertical_bias="0.911" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -80,19 +68,5 @@
         app:layout_constraintBottom_toTopOf="@+id/searchView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="96dp"
-        android:fontFamily="@font/expletus_sans"
-        android:text="Add medicine"
-        android:textColor="#000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

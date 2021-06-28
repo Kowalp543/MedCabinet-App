@@ -19,18 +19,6 @@
         android:id="@+id/include"
         layout="@layout/content_main" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_list_button"
-        android:layout_width="72dp"
-        android:layout_height="74dp"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:scrollX="-8dp"
-        android:scrollY="-8dp"
-        app:backgroundTint="@color/Addbutton"
-        app:rippleColor="@color/cardview_light_background"
-        app:srcCompat="@android:drawable/ic_input_add" />
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
