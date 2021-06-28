@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MedCabinetApp">
-        <activity android:name=".DetailsActivity"></activity>
+        <activity android:name=".MedicineList"></activity>
+        <activity android:name=".DetailsActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -26,4 +27,5 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
 </manifest>

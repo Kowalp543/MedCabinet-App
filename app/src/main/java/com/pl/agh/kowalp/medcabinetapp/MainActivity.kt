@@ -8,6 +8,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity(), SelectionRecyclerViewClickListener {
 
 
     lateinit var listRecyclerView: RecyclerView
+    lateinit var CheckButton: Button
 
     val dataManager: DataManager = DataManager(this)
 
@@ -33,6 +35,15 @@ class MainActivity : AppCompatActivity(), SelectionRecyclerViewClickListener {
         setSupportActionBar(findViewById(R.id.toolbar))
 
 
+        CheckButton = findViewById(R.id.checkbutton)
+
+        CheckButton.setOnClickListener {
+            val intent = Intent(this, MedicineList::class.java)
+            startActivity(intent)
+        }
+
+
+
 
 
         val lists = dataManager.readList()
@@ -42,7 +53,7 @@ class MainActivity : AppCompatActivity(), SelectionRecyclerViewClickListener {
             showCreateListDialog()
         }
 
-        listRecyclerView = findViewById(R.id.lists_recycler_view)
+        listRecyclerView = findViewById(R.id.lists_recycler_view2)
         listRecyclerView.layoutManager = LinearLayoutManager(this)
 
         listRecyclerView.adapter = ListSelectionRecyclerViewAdapter(lists, this )

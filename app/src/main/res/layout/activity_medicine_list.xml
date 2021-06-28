@@ -4,10 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailsActivity">
+    tools:context=".MedicineList">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_list_button2"
+        android:layout_width="72dp"
+        android:layout_height="74dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_marginBottom="16dp"
+        android:scrollX="-8dp"
+        android:scrollY="-8dp"
+        app:backgroundTint="@color/Addbutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="@color/cardview_light_background"
+        app:srcCompat="@android:drawable/ic_input_add" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView4"
         android:layout_width="411dp"
         android:layout_height="130dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,26 +31,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/image3" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_task_button"
-        android:layout_width="54dp"
-        android:layout_height="84dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:clickable="true"
-        app:backgroundTint="@color/Addbutton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_input_add" />
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list_items_recycler_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/Medicine_Recycler"
+        android:layout_width="409dp"
+        android:layout_height="400dp"
+        android:layout_marginBottom="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 </androidx.constraintlayout.widget.ConstraintLayout>
