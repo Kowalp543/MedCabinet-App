@@ -12,6 +12,6 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="list_name">What is the name of your medicine?</string>
     <string name="create_list">Add medicine</string>
-    <string name="task_name_question">Add properties of your medicine?</string>
+    <string name="task_name_question">Add properties of your medicine</string>
     <string name="create_task">Add properties</string>
 </resources>
